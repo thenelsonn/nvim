@@ -25,4 +25,6 @@ end
 vim.cmd.packadd("packer.nvim")
 return require("packer").startup(function(use)
     use("wbthomason/packer.nvim") -- let packer.nvim manage itself
+
+    use("LunarVim/darkplus.nvim") -- A dark Neovim theme ported from VS Code Dark+ theme.
 end)
