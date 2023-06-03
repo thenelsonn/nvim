@@ -1,3 +1,11 @@
+-- For transparency
+local groups = {
+    "Normal", "NormalNC", "Comment", "Constant", "Special", "Identifier",
+    "Statement", "PreProc", "Type", "Underlined", "Todo", "String", "Function",
+    "Conditional", "Repeat", "Operator", "Structure", "LineNr", "NonText",
+    "SignColumn", "CursorLineNr", "EndOfBuffer",
+}
+
 -- list all available colorschemes
 -- in the current Neovim configuration
 local colorschemes = vim.fn.getcompletion("", "color")
@@ -52,4 +60,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 local colorscheme = retrieve_colorscheme()
 if colorscheme then
     vim.cmd("colorscheme " .. colorscheme)
+end
+
+-- Remove all background colors to make nvim transparent
+for _, v in ipairs(groups) do
+    local attrs = vim.tbl_extend("force", vim.api.nvim_get_hl_by_name(v, true), { bg = "none", ctermbg = "none" })
+    vim.api.nvim_set_hl(0, v, attrs)
 end
