@@ -1,3 +1,6 @@
+-- load colorschemes
+require("thenelsonn.colors")
+
 -- For transparency
 local groups = {
     "Normal", "NormalNC", "Comment", "Constant", "Special", "Identifier",
