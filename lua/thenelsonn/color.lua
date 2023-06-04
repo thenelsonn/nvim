@@ -42,6 +42,15 @@ local function retrieve_colorscheme()
     return colorscheme
 end
 
+--- Remove all background colors to make nvim transparent
+local function remove_background()
+    for _, v in ipairs(groups) do
+        local attrs = vim.tbl_extend("force", vim.api.nvim_get_hl_by_name(v, true), { bg = "none", ctermbg = "none" })
+        attrs[true] = nil
+        vim.api.nvim_set_hl(0, v, attrs)
+    end
+end
+
 -- Remember the colorscheme change
 vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function(info)
@@ -57,6 +66,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
         assert(vim.loop.fs_write(fd, ("%s\n"):format(colorscheme), -1))
         assert(vim.loop.fs_close(fd))
+
+        remove_background()
     end,
 })
 
@@ -65,8 +76,4 @@ if colorscheme then
     vim.cmd("colorscheme " .. colorscheme)
 end
 
--- Remove all background colors to make nvim transparent
-for _, v in ipairs(groups) do
-    local attrs = vim.tbl_extend("force", vim.api.nvim_get_hl_by_name(v, true), { bg = "none", ctermbg = "none" })
-    vim.api.nvim_set_hl(0, v, attrs)
-end
+remove_background()
