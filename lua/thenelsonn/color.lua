@@ -79,5 +79,3 @@ if colorscheme then
         end
     end
 end
-
-remove_background()

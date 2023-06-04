@@ -1,31 +1,32 @@
---- Install packer with git
-function install_packer(install_path)
-    vim.notify("\nInstalling plugin manager...")
+local packer_bootstrap = false
+local path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(path)) > 0 then
+    vim.notify("[Info]: Installing packer...")
     vim.fn.system({
         "git",
         "clone",
         "--depth", "1",
         "https://github.com/wbthomason/packer.nvim",
-        install_path
+        path
     })
+
+    vim.cmd("packadd packer.nvim")
+    packer_bootstrap = true
 end
 
-local path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(path)) > 0 then
-    vim.notify("Plugin manager is not installed")
-    local input = vim.fn.input("Install now? (y)/n: ")
-    if input == "" or input == "y" then
-        install_packer(path)
-        vim.notify("Plugin manager was successfully installed!")
-        vim.fn.input("Press 'Enter' and re-open Neovim")
-        vim.cmd("q!") -- quit Neovim
-    else vim.cmd("q!") end
-end
-
-vim.cmd.packadd("packer.nvim")
-return require("packer").startup(function(use)
+local packer = require("packer")
+packer.startup(function(use)
     use("wbthomason/packer.nvim") -- let packer.nvim manage itself
 
     use("EdenEast/nightfox.nvim") -- a highly customizable theme with support for a variety of plugins
     use("LunarVim/darkplus.nvim") -- a dark Neovim theme ported from VS Code Dark+ theme
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    if packer_bootstrap then
+        vim.notify("[Info]: Installing plugins...")
+        vim.cmd("silent !nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'")
+        vim.notify("[Info]: All set! Plugins will take effect upon your next visit")
+    end
 end)
+
+return packer_bootstrap
