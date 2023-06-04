@@ -73,7 +73,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 local colorscheme = retrieve_colorscheme()
 if colorscheme then
-    vim.cmd("colorscheme " .. colorscheme)
+    for _, v in ipairs(colorschemes) do
+        if colorscheme == v then
+            vim.cmd.colorscheme(colorscheme)
+        end
+    end
 end
 
 remove_background()
