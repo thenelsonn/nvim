@@ -1,6 +1,3 @@
--- load colorschemes
-require("thenelsonn.colors.nightfox")
-
 -- For transparency
 local groups = {
     "Normal", "NormalNC", "Comment", "Constant", "Special", "Identifier",

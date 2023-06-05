@@ -18,8 +18,7 @@ local packer = require("packer")
 packer.startup(function(use)
     use("wbthomason/packer.nvim") -- let packer.nvim manage itself
 
-    use("EdenEast/nightfox.nvim") -- a highly customizable theme with support for a variety of plugins
-    use("LunarVim/darkplus.nvim") -- a dark Neovim theme ported from VS Code Dark+ theme
+    use("martinsione/darkplus.nvim") -- a dark Neovim theme ported from VS Code
 
     use("nvim-tree/nvim-web-devicons") -- icon pack
     use("nvim-lualine/lualine.nvim") -- custom status line for Neovim
