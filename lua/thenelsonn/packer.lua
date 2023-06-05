@@ -5,9 +5,10 @@ if vim.fn.empty(vim.fn.glob(path)) > 0 then
     vim.fn.system({
         "git",
         "clone",
-        "--depth", "1",
+        "--depth",
+        "1",
         "https://github.com/wbthomason/packer.nvim",
-        path
+        path,
     })
 
     vim.cmd("packadd packer.nvim")
@@ -33,7 +34,7 @@ packer.startup(function(use)
 
     use("JoosepAlviste/nvim-ts-context-commentstring") -- set the commentstring based on the cursor pos in a file
     use("numToStr/Comment.nvim") -- smart and powerful commenting plugin for Neovim
-    
+
     use("williamboman/mason.nvim") -- portable package manager
     use("neovim/nvim-lspconfig") -- configuration for Neovim's built-in LSP
     use("jose-elias-alvarez/null-ls.nvim") -- lsp diagnostics, code actions, formatting and more
@@ -52,6 +53,7 @@ packer.startup(function(use)
     use("L3MON4D3/LuaSnip") -- snippet engine
 
     use("RRethy/vim-illuminate") -- auto highlight other uses of the word
+    use("lewis6991/gitsigns.nvim") -- git integration
     use("nvim-lua/plenary.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim

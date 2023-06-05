@@ -11,4 +11,6 @@ if not require("thenelsonn.packer") then
 
     require("thenelsonn.cmp")
     require("thenelsonn.lsp")
+
+    require("thenelsonn.plugins")
 end

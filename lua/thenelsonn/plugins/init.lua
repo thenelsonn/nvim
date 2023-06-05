@@ -1,0 +1,1 @@
+require("thenelsonn.plugins.gitsigns")
