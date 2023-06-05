@@ -27,6 +27,13 @@ packer.startup(function(use)
     use("nvim-telescope/telescope-file-browser.nvim") -- extension for telescope.nvim
     use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder
 
+    use("nvim-treesitter/nvim-treesitter") -- treesitter configurations and abstraction layer for Neovim
+    use("windwp/nvim-ts-autotag") -- auto close and auto rename html tag
+    use("windwp/nvim-autopairs") -- auto pairs for neovim
+
+    use("JoosepAlviste/nvim-ts-context-commentstring") -- set the commentstring based on the cursor pos in a file
+    use("numToStr/Comment.nvim") -- smart and powerful commenting plugin for Neovim
+
     use("nvim-lua/plenary.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
