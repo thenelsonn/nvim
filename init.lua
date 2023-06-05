@@ -5,5 +5,6 @@ require("thenelsonn.remap")
 -- configuring the plugin manager.
 if not require("thenelsonn.packer") then
     require("thenelsonn.colors")
+    require("thenelsonn.ui")
     require("thenelsonn.lualine")
 end

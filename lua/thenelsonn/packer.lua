@@ -23,6 +23,7 @@ packer.startup(function(use)
 
     use("nvim-tree/nvim-web-devicons") -- icon pack
     use("nvim-lualine/lualine.nvim") -- custom status line for Neovim
+    use("goolord/alpha-nvim") -- neovim greeter
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
