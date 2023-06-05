@@ -52,8 +52,9 @@ packer.startup(function(use)
     use("rafamadriz/friendly-snippets") -- set of preconfigured snippets
     use("L3MON4D3/LuaSnip") -- snippet engine
 
-    use("RRethy/vim-illuminate") -- auto highlight other uses of the word
+    use("lukas-reineke/indent-blankline.nvim") -- indent guides for Neovim
     use("lewis6991/gitsigns.nvim") -- git integration
+    use("RRethy/vim-illuminate") -- auto highlight other uses of the word
     use("nvim-lua/plenary.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
