@@ -57,6 +57,16 @@ packer.startup(function(use)
     use("RRethy/vim-illuminate") -- auto highlight other uses of the word
     use("nvim-lua/plenary.nvim")
 
+    -- Markdown preview plugin for Neovim
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        ft = { "markdown" },
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+    })
+
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
         vim.notify("[Info]: Installing plugins...")
