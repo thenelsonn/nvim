@@ -3,7 +3,7 @@ if not lualine_status then
     return
 end
 
-local C = require("thenelsonn.lualine.components")
+local C = require("thenelsonn.ui.lualine.components")
 
 lualine.setup({
     options = {
