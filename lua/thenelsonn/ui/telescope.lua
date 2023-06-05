@@ -7,6 +7,7 @@ end
 telescope.setup({
     defaults = {
         theme = "dropdown",
+        results_title = "",
         prompt_prefix = "  ",
         selection_caret = "  ",
         respect_gitignore = true,
@@ -18,7 +19,7 @@ telescope.setup({
             width = 0.6,
             height = 0.6,
             horizontal = {
-                prompt_position = "top"
+                prompt_position = "top",
             },
         },
     },
@@ -34,15 +35,12 @@ local browser = telescope.extensions.file_browser
 
 vim.keymap.set("n", "<space>w", function()
     builtin.find_files({
-        prompt_title = "",
-        results_title = "",
         previewer = false
     })
 end)
 
 vim.keymap.set("n", "<space>e", function()
     browser.file_browser({
-        prompt_title = "",
         previewer = false
     })
 end)
