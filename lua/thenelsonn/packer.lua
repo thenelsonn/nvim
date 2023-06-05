@@ -25,6 +25,11 @@ packer.startup(function(use)
     use("nvim-lualine/lualine.nvim") -- custom status line for Neovim
     use("goolord/alpha-nvim") -- neovim greeter
 
+    use("nvim-telescope/telescope-file-browser.nvim") -- extension for telescope.nvim
+    use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder
+
+    use("nvim-lua/plenary.nvim")
+
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
         vim.notify("[Info]: Installing plugins...")
