@@ -4,6 +4,6 @@ require("thenelsonn.remap")
 -- Set up the dependent plugins only after 
 -- configuring the plugin manager.
 if not require("thenelsonn.packer") then
-    require("thenelsonn.color")
+    require("thenelsonn.colors")
 end
 
