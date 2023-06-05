@@ -34,6 +34,18 @@ packer.startup(function(use)
     use("JoosepAlviste/nvim-ts-context-commentstring") -- set the commentstring based on the cursor pos in a file
     use("numToStr/Comment.nvim") -- smart and powerful commenting plugin for Neovim
 
+    use("hrsh7th/nvim-cmp") -- completion plugin
+    use("hrsh7th/cmp-path") -- nvim-cmp source for path
+    use("hrsh7th/cmp-calc") -- nvim-cmp source for math calculation
+    use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
+    use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for LSP
+    use("hrsh7th/cmp-nvim-lua") -- nvim-cmp source for nvim lua
+    use("saadparwaiz1/cmp_luasnip") -- nvim-cmp source for luasnip completion
+    use("hrsh7th/cmp-nvim-lsp-signature-help") -- nvim-cmp source for signature help
+
+    use("rafamadriz/friendly-snippets") -- set of preconfigured snippets
+    use("L3MON4D3/LuaSnip") -- snippet engine
+
     use("nvim-lua/plenary.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
