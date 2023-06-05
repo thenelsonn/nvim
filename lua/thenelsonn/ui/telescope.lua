@@ -8,6 +8,7 @@ telescope.setup({
     defaults = {
         theme = "dropdown",
         prompt_prefix = "  ",
+        selection_caret = "  ",
         respect_gitignore = true,
         layout_strategy = "horizontal",
         sorting_strategy = "ascending",
