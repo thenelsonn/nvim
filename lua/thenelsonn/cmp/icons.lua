@@ -11,7 +11,7 @@ return {
     Folder = "󰉋 ",
     Function = "󰊕",
     Interface = " ",
-    Keyword = "",
+    Keyword = "󰌋 ",
     Method = "󰆧 ",
     Module = " ",
     Operator = "󰆕 ",
