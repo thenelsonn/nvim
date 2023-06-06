@@ -13,7 +13,7 @@ lualine.setup({
         disabled_filetypes = {
             "alpha",
             "dashboard",
-        }
+        },
     },
     sections = {
         lualine_a = { C.bar },
@@ -30,5 +30,5 @@ lualine.setup({
         lualine_x = {},
         lualine_y = {},
         lualine_z = { C.bar },
-    }
+    },
 })

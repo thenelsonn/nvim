@@ -4,7 +4,7 @@ M.bar = {
     padding = 0,
     function()
         return " "
-    end
+    end,
 }
 
 M.filetype = {
@@ -15,7 +15,7 @@ M.filetype = {
 
 M.filename = {
     "filename",
-    color = { gui = "bold" }
+    color = { gui = "bold" },
 }
 
 M.diagnostics = {
@@ -42,7 +42,7 @@ M.LSP = {
     end,
     icon = " ",
     color = { gui = "bold" },
-    padding = { left = 1, right = 2 }
+    padding = { left = 1, right = 2 },
 }
 
 M.branch = {
@@ -53,11 +53,11 @@ M.branch = {
 
 M.diff = {
     "diff",
-    symbols = { 
-        added = " ", 
-        modified = " ", 
-        removed = " " 
-    }
+    symbols = {
+        added = " ",
+        modified = " ",
+        removed = " ",
+    },
 }
 
 return M

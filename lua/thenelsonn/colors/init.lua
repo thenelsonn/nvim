@@ -1,16 +1,34 @@
 -- For transparency
 local groups = {
-    "Normal", "NormalNC", "Comment", "Constant", "Special", "Identifier",
-    "Statement", "PreProc", "Type", "Underlined", "Todo", "String", "Function",
-    "Conditional", "Repeat", "Operator", "Structure", "LineNr", "NonText",
-    "SignColumn", "CursorLineNr", "EndOfBuffer",
+    "Normal",
+    "NormalNC",
+    "Comment",
+    "Constant",
+    "Special",
+    "Identifier",
+    "Statement",
+    "PreProc",
+    "Type",
+    "Underlined",
+    "Todo",
+    "String",
+    "Function",
+    "Conditional",
+    "Repeat",
+    "Operator",
+    "Structure",
+    "LineNr",
+    "NonText",
+    "SignColumn",
+    "CursorLineNr",
+    "EndOfBuffer",
 }
 
 -- list all available colorschemes
 -- in the current Neovim configuration
 local colorschemes = vim.fn.getcompletion("", "color")
 
---- Open the cache file that stores 
+--- Open the cache file that stores
 --- the most recently used colorscheme
 --- @param flags integer|string
 --- @return integer|nil

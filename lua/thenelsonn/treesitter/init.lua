@@ -20,7 +20,7 @@ local parsers = {
     "typescript",
     "javascript",
     "markdown_inline",
-    "markdown"
+    "markdown",
 }
 
 treesitter.setup({

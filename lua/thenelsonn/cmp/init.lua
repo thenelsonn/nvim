@@ -20,5 +20,5 @@ cmp.setup({
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = fn.tab(cmp, luasnip),
         ["<S-Tab>"] = fn.stab(cmp, luasnip),
-    })
+    }),
 })

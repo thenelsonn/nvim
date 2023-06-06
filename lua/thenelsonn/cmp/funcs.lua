@@ -51,7 +51,7 @@ M.formatting = {
             path = "[Path]",
         })[entry.source.name]
         return item
-    end
+    end,
 }
 
 return M

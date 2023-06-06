@@ -25,7 +25,7 @@ telescope.setup({
     },
     extensions = {
         file_browser = {
-            hijack_netrw = true
+            hijack_netrw = true,
         },
     },
 })
@@ -35,12 +35,12 @@ local browser = telescope.extensions.file_browser
 
 vim.keymap.set("n", "<space>w", function()
     builtin.find_files({
-        previewer = false
+        previewer = false,
     })
 end)
 
 vim.keymap.set("n", "<space>e", function()
     browser.file_browser({
-        previewer = false
+        previewer = false,
     })
 end)
