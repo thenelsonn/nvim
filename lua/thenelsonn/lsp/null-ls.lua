@@ -26,6 +26,7 @@ null_ls.setup({
     sources = {
         formatting.clang_format.with({ extra_args = { "-style={IndentWidth: 4}" } }),
         formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "4" } }),
+        formatting.mdformat.with({ extra_args = { "--wrap", "85" } }),
         formatting.cmake_format,
         formatting.prettierd,
         formatting.rustfmt,
