@@ -13,6 +13,7 @@ lualine.setup({
         disabled_filetypes = {
             "alpha",
             "dashboard",
+            "NvimTree",
         },
     },
     sections = {

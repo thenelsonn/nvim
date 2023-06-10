@@ -22,6 +22,7 @@ local groups = {
     "SignColumn",
     "CursorLineNr",
     "EndOfBuffer",
+    "NvimTreeNormal",
 }
 
 -- list all available colorschemes

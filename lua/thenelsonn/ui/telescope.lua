@@ -23,24 +23,11 @@ telescope.setup({
             },
         },
     },
-    extensions = {
-        file_browser = {
-            hijack_netrw = true,
-        },
-    },
 })
 
-telescope.load_extension("file_browser")
-local browser = telescope.extensions.file_browser
-
+-- open Telescope
 vim.keymap.set("n", "<space>w", function()
     builtin.find_files({
-        previewer = false,
-    })
-end)
-
-vim.keymap.set("n", "<space>e", function()
-    browser.file_browser({
         previewer = false,
     })
 end)

@@ -25,8 +25,8 @@ packer.startup(function(use)
     use("nvim-lualine/lualine.nvim") -- custom status line for Neovim
     use("goolord/alpha-nvim") -- neovim greeter
 
-    use("nvim-telescope/telescope-file-browser.nvim") -- extension for telescope.nvim
     use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder
+    use("nvim-tree/nvim-tree.lua") -- a file explorer tree
 
     use("nvim-treesitter/nvim-treesitter") -- treesitter configurations and abstraction layer for Neovim
     use("windwp/nvim-ts-autotag") -- auto close and auto rename html tag

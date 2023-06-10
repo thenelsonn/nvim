@@ -27,7 +27,6 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
     dashboard.button("e", "󰈔  : New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("f", "󰈞  : Find file", ":Telescope find_files previewer=false <CR>"),
-    dashboard.button("b", "󰝰  : Browse files", ":Telescope file_browser previewer=false <CR>"),
     dashboard.button("c", "  : Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
     dashboard.button("q", "󰅙  : Quit NVIM", ":qa<CR>"),
 }
