@@ -24,11 +24,15 @@ null_ls.setup({
     on_attach = on_attach,
     debug = false,
     sources = {
-        formatting.clang_format.with({ extra_args = { "-style={IndentWidth: 4}" } }),
+        formatting.rustfmt,
+        formatting.prettierd,
         formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "4" } }),
         formatting.mdformat.with({ extra_args = { "--wrap", "85" } }),
         formatting.cmake_format.with({ extra_args = { "--tab-size", "4" } }),
-        formatting.prettierd,
-        formatting.rustfmt,
+        formatting.clang_format.with({
+            extra_args = {
+                "-style={IndentWidth: 4, IndentCaseLabels: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortIfStatementsOnASingleLine: AllIfsAndElse}",
+            },
+        }),
     },
 })
