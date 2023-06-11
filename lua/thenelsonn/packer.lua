@@ -35,6 +35,9 @@ packer.startup(function(use)
     use("JoosepAlviste/nvim-ts-context-commentstring") -- set the commentstring based on the cursor pos in a file
     use("numToStr/Comment.nvim") -- smart and powerful commenting plugin for Neovim
 
+    use("mfussenegger/nvim-dap") -- debug adapter protocol client implementation
+    use("rcarriga/nvim-dap-ui") -- a ui for nvim-dap
+
     use("williamboman/mason.nvim") -- portable package manager
     use("neovim/nvim-lspconfig") -- configuration for Neovim's built-in LSP
     use("jose-elias-alvarez/null-ls.nvim") -- lsp diagnostics, code actions, formatting and more

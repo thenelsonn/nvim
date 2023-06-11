@@ -40,3 +40,6 @@ keymap("x", "<leader>p", '"_dP', opts)
 
 -- jump to the previous file
 keymap("n", "<C-o>", "<C-^>", opts)
+
+-- open the current pane in new tab
+keymap("n", "<leader>o", "<cmd>tabnew %<cr>", opts)
