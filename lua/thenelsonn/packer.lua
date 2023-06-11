@@ -38,6 +38,14 @@ packer.startup(function(use)
     use("mfussenegger/nvim-dap") -- debug adapter protocol client implementation
     use("rcarriga/nvim-dap-ui") -- a ui for nvim-dap
 
+    -- nvim-dap adapter for vscode-js-debug
+    use("mxsdev/nvim-dap-vscode-js")
+    use({
+        "microsoft/vscode-js-debug",
+        run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+        opt = true,
+    })
+
     use("williamboman/mason.nvim") -- portable package manager
     use("neovim/nvim-lspconfig") -- configuration for Neovim's built-in LSP
     use("jose-elias-alvarez/null-ls.nvim") -- lsp diagnostics, code actions, formatting and more

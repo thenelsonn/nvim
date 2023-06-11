@@ -3,3 +3,4 @@ require("thenelsonn.dap.ui")
 
 require("thenelsonn.dap.codelldb")
 require("thenelsonn.dap.debugpy")
+require("thenelsonn.dap.jsd")
