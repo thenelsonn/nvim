@@ -50,6 +50,7 @@ packer.startup(function(use)
     use("neovim/nvim-lspconfig") -- configuration for Neovim's built-in LSP
     use("jose-elias-alvarez/null-ls.nvim") -- lsp diagnostics, code actions, formatting and more
     use("williamboman/mason-lspconfig.nvim") -- an extension for mason.nvim
+    use("mfussenegger/nvim-jdtls") -- extensions for the built-in LSP for eclipse.jdt.ls
 
     use("hrsh7th/nvim-cmp") -- completion plugin
     use("hrsh7th/cmp-path") -- nvim-cmp source for path
