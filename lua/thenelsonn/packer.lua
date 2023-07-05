@@ -72,10 +72,8 @@ packer.startup(function(use)
     -- Markdown preview plugin for Neovim
     use({
         "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        ft = { "markdown" },
-        setup = function()
-            vim.g.mkdp_filetypes = { "markdown" }
+        run = function()
+            vim.fn["mkdp#util#install"]()
         end,
     })
 
