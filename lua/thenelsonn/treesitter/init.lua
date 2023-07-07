@@ -17,6 +17,7 @@ local parsers = {
     "jsdoc",
     "luadoc",
     "python",
+    "haskell",
     "typescript",
     "javascript",
     "markdown_inline",
