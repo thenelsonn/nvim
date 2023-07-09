@@ -4,10 +4,12 @@ require("thenelsonn.utils")
 
 -- Set up the dependent plugins only after
 -- configuring the plugin manager.
-if not require("thenelsonn.packer") then
-    require("thenelsonn.ui")
-    require("thenelsonn.colors")
+if require("thenelsonn.packer") then
     require("thenelsonn.treesitter")
+    require("thenelsonn.colors")
+    require("thenelsonn.ui")
+
+    require("thenelsonn.mason")
 
     require("thenelsonn.cmp")
     require("thenelsonn.lsp")

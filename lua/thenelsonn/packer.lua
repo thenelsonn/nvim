@@ -1,21 +1,18 @@
-local packer_bootstrap = false
 local path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(path)) > 0 then
-    vim.notify("[Info]: Installing packer...")
-    vim.fn.system({
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        path,
-    })
-
-    vim.cmd("packadd packer.nvim")
-    packer_bootstrap = true
+    vim.notify("Packer is not installed! See README.md", vim.log.levels.WARN)
+    return false
 end
 
+vim.cmd("packadd packer.nvim")
 local packer = require("packer")
+
+packer.init({
+    autoremove = true,
+    ensure_dependencies = true,
+    display = { prompt_border = "single" },
+})
+
 packer.startup(function(use)
     use("wbthomason/packer.nvim") -- let packer.nvim manage itself
 
@@ -38,13 +35,7 @@ packer.startup(function(use)
     use("mfussenegger/nvim-dap") -- debug adapter protocol client implementation
     use("rcarriga/nvim-dap-ui") -- a ui for nvim-dap
 
-    -- nvim-dap adapter for vscode-js-debug
-    use("mxsdev/nvim-dap-vscode-js")
-    use({
-        "microsoft/vscode-js-debug",
-        run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-        opt = true,
-    })
+    use("mxsdev/nvim-dap-vscode-js") -- nvim-dap adapter for vscode-js-debug
 
     use("williamboman/mason.nvim") -- portable package manager
     use("neovim/nvim-lspconfig") -- configuration for Neovim's built-in LSP
@@ -76,13 +67,6 @@ packer.startup(function(use)
             vim.fn["mkdp#util#install"]()
         end,
     })
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    if packer_bootstrap then
-        vim.notify("[Info]: Installing plugins...")
-        vim.cmd("silent !nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'")
-        vim.notify("[Info]: All set! Plugins will take effect upon your next visit")
-    end
 end)
 
-return packer_bootstrap
+return true

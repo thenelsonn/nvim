@@ -5,23 +5,8 @@ end
 
 -- list of required TS parsers
 local parsers = {
-    "cpp",
-    "tsx",
-    "lua",
-    "java",
-    "bash",
-    "yaml",
-    "json",
-    "html",
-    "cmake",
-    "jsdoc",
-    "luadoc",
-    "python",
-    "haskell",
-    "typescript",
-    "javascript",
-    "markdown_inline",
     "markdown",
+    "markdown_inline",
 }
 
 treesitter.setup({

@@ -88,10 +88,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 local colorscheme = retrieve_colorscheme()
-if colorscheme then
-    for _, v in ipairs(colorschemes) do
-        if colorscheme == v then
-            vim.cmd.colorscheme(colorscheme)
-        end
+if not colorscheme then
+    colorscheme = "darkplus"
+end
+
+for _, v in ipairs(colorschemes) do
+    if colorscheme == v then
+        vim.cmd.colorscheme(colorscheme)
     end
 end

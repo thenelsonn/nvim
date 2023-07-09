@@ -4,8 +4,9 @@ if not jdtls_status or not server_opts then
     return
 end
 
--- $HOME
-local home = os.getenv("HOME")
+-- Nvim dirs
+local nvim = "~/.local/share/nvim/"
+local jdtls_dir = nvim .. "mason/packages/jdtls/"
 
 -- Root dir
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
@@ -33,10 +34,10 @@ local config = {
         "java.base/java.lang=ALL-UNNAMED",
 
         "-jar",
-        vim.fn.glob(home .. "/.local/share/nvim/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+        vim.fn.glob(jdtls_dir .. "plugins/org.eclipse.equinox.launcher_*.jar"),
 
         "-configuration",
-        vim.fn.glob(home .. "/.local/share/nvim/jdtls/config_linux/"),
+        vim.fn.glob(jdtls_dir .. "config_linux/"),
 
         "-data",
         workspace,
@@ -52,8 +53,7 @@ local config = {
     init_options = {
         bundles = {
             vim.fn.glob(
-                home
-                    .. "/.local/share/nvim/jdtls/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.46.0.jar",
+                nvim .. "mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
                 1
             ),
         },

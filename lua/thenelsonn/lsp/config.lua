@@ -1,30 +1,9 @@
-local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-local mason_status, mason = pcall(require, "mason")
-if not (mason_status or lspconfig_status or mason_lspconfig_status) then
+if not lspconfig_status then
     return
 end
 
--- list of required LSP servers
-local servers = {
-    "rust_analyzer",
-    "cssmodules_ls",
-    "tsserver",
-    "pyright",
-    "clangd",
-    "jsonls",
-    "lua_ls",
-    "bashls",
-    "cssls",
-    "cmake",
-    "html",
-}
-
--- setup mason.nvim
-mason.setup({})
-mason_lspconfig.setup({
-    ensure_installed = servers,
-})
+local servers = require("thenelsonn.mason.packages").list.lsp
 
 -- setup servers
 for _, server in pairs(servers) do
