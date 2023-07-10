@@ -26,8 +26,17 @@ null_ls.setup({
     sources = {
         formatting.rustfmt,
         formatting.prettierd,
-        formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "4" } }),
         formatting.cmake_format.with({ extra_args = { "--tab-size", "4" } }),
+        formatting.stylua.with({
+            extra_args = {
+                "--indent-type",
+                "Spaces",
+                "--indent-width",
+                "4",
+                "--collapse-simple-statement",
+                "Always",
+            },
+        }),
         formatting.clang_format.with({
             extra_args = {
                 "-style={IndentWidth: 4, IndentCaseLabels: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortIfStatementsOnASingleLine: AllIfsAndElse}",
