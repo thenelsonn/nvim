@@ -23,7 +23,6 @@ packer.startup(function(use)
     use("goolord/alpha-nvim") -- neovim greeter
 
     use("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder
-    use("nvim-tree/nvim-tree.lua") -- a file explorer tree
 
     use("nvim-treesitter/nvim-treesitter") -- treesitter configurations and abstraction layer for Neovim
     use("windwp/nvim-ts-autotag") -- auto close and auto rename html tag
@@ -63,9 +62,7 @@ packer.startup(function(use)
     -- Markdown preview plugin for Neovim
     use({
         "iamcco/markdown-preview.nvim",
-        run = function()
-            vim.fn["mkdp#util#install"]()
-        end,
+        run = function() vim.fn["mkdp#util#install"]() end,
     })
 end)
 
