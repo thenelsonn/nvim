@@ -1,6 +1,5 @@
 require("thenelsonn.set")
 require("thenelsonn.remap")
-require("thenelsonn.utils")
 
 -- Set up the dependent plugins only after
 -- configuring the plugin manager.
