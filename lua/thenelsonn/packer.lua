@@ -62,7 +62,7 @@ packer.startup(function(use)
     -- Markdown preview plugin for Neovim
     use({
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        run = "cd app && npm install && npm run build",
     })
 end)
 
