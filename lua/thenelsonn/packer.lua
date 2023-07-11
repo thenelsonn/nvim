@@ -59,6 +59,12 @@ packer.startup(function(use)
     use("RRethy/vim-illuminate") -- auto highlight other uses of the word
     use("nvim-lua/plenary.nvim")
 
+    -- Bufferline
+    use({
+        "akinsho/bufferline.nvim",
+        tag = "*",
+    })
+
     -- Markdown preview plugin for Neovim
     use({
         "iamcco/markdown-preview.nvim",
