@@ -5,8 +5,9 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
 -- split window
-keymap("n", "sh", "<cmd>split<cr>", opts)
+keymap("n", "ss", "<cmd>split<cr>", opts)
 keymap("n", "sv", "<cmd>vsplit<cr>", opts)
+keymap("n", "st", "<cmd>tabnew %<cr>", opts)
 
 -- better navigation across visible panes
 keymap("n", "<leader>h", "<C-w>h", opts)
@@ -41,5 +42,10 @@ keymap("x", "<leader>p", '"_dP', opts)
 -- jump to the previous file
 keymap("n", "<C-o>", "<C-^>", opts)
 
--- open the current pane in new tab
-keymap("n", "<leader>o", "<cmd>tabnew %<cr>", opts)
+-- open netrw
+keymap("n", "<leader>eo", "<cmd>Explore<cr>", opts)
+keymap("n", "<leader>et", "<cmd>tabnew<cr><cmd>Explore<cr>", opts)
+
+-- switch tabs
+keymap("n", "<leader>tn", "<cmd>tabnext<cr>", opts)
+keymap("n", "<leader>tp", "<cmd>tabprev<cr>", opts)
